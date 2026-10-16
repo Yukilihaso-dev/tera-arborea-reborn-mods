@@ -1,0 +1,12 @@
+{
+  "defs": {
+    "S_ABNORMALITY_BEGIN": [4],
+    "S_ABNORMALITY_REFRESH": [2],
+    "S_PLAY_EFFECT": [1],
+    "S_NOCTAN_VARIATION_INFO": [1],
+    "S_SPAWN_ME": [3],
+    "S_CREATURE_LIFE": [3],
+    "C_LOAD_TOPO_FIN": [1],
+    "S_REMOVE_EFFECT": [1]
+  }
+}

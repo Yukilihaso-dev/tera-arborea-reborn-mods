@@ -1,0 +1,7 @@
+{
+  "major": 100,
+  "minor": 2,
+  "revision": "SrcRegVer: 376946\nReleaseName: Arborea Reborn #2.1.6-1 (LIVE)\nVersion: Live-100.02 Arborea Reborn #2.1.6-1 (LIVE)\nReleaseDate: 2020-11-10 \uc624\ud6c4 2:40:05\nShareRevision: 376290\nClientRevision: 376871\nServerRevision: 376946\nReleaseDataRevision: 487849\nWebAppRevision: 376026\nTeraReleaseName: Arborea Reborn #2.1.6-1 (LIVE)",
+  "source": "S1Game/CookedPC/Art_Data/Packages/Shaders/PostProcess.gpk",
+  "sha256": "5ccc7d76223b7680c4113d70bd9ea8a6aafbccb5585f306d871efb65afa9a2c6"
+}

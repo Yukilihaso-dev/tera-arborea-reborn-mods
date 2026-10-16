@@ -1,0 +1,38 @@
+{
+  "format": 1,
+  "sourceSha256": "5ccc7d76223b7680c4113d70bd9ea8a6aafbccb5585f306d871efb65afa9a2c6",
+  "variants": {
+    "flyingDashBlur": {
+      "file": "assets/flyingDashBlur/PostProcess.gpk",
+      "sha256": "6e34afeb54df80e442fbe08b23cc6f2866c67614e2b879da868c01af4b9be03f",
+      "features": [
+        "flyingDashBlur"
+      ],
+      "targets": [
+        "PPC.S1_FlightVehicleBlur_PPC.MaterialEffect_0"
+      ]
+    },
+    "nostrumFlash": {
+      "file": "assets/nostrumFlash/PostProcess.gpk",
+      "sha256": "55877668f573b84f5a60a485f372e6212b1e6a4db009e06c787fbd63d4c0a04b",
+      "features": [
+        "nostrumFlash"
+      ],
+      "targets": [
+        "PPC.S1_Noctan_PPC.MaterialEffect_3"
+      ]
+    },
+    "flyingDashBlur+nostrumFlash": {
+      "file": "assets/flyingDashBlur+nostrumFlash/PostProcess.gpk",
+      "sha256": "ceca793a4c1ba94c6772601a62fb51eab5f356f5f7e5fe1071b9828fbfb3e6ff",
+      "features": [
+        "flyingDashBlur",
+        "nostrumFlash"
+      ],
+      "targets": [
+        "PPC.S1_FlightVehicleBlur_PPC.MaterialEffect_0",
+        "PPC.S1_Noctan_PPC.MaterialEffect_3"
+      ]
+    }
+  }
+}

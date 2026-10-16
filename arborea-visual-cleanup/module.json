@@ -1,0 +1,13 @@
+{
+  "name": "arborea-visual-cleanup",
+  "version": "1.0.0",
+  "description": "Removes nostrum hand glow, screen flashes, flying dash blur and camera shake.",
+  "disableAutoUpdate": true,
+  "keywords": ["client", "network"],
+  "dependencies": {"tera-game-state": ""},
+  "options": {
+    "guiName": "Arborea Visual Cleanup",
+    "cliName": "VisualCleanup",
+    "reloadable": false
+  }
+}
