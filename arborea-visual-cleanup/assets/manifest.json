@@ -33,6 +33,54 @@
         "PPC.S1_FlightVehicleBlur_PPC.MaterialEffect_0",
         "PPC.S1_Noctan_PPC.MaterialEffect_3"
       ]
+    },
+    "vignette": {
+      "file": "assets/vignette/PostProcess.gpk",
+      "sha256": "0df47a8230821d142030fb0d886975a1982bb167a9608a9d23bf227405ad647f",
+      "features": [
+        "vignette"
+      ],
+      "targets": [
+        "Mat.S1_Default00_PPMI"
+      ]
+    },
+    "flyingDashBlur+vignette": {
+      "file": "assets/flyingDashBlur+vignette/PostProcess.gpk",
+      "sha256": "2a8962a68f95d9f14390ec252e447ca1652b095d30e0c6bb7f4c251365f6668a",
+      "features": [
+        "flyingDashBlur",
+        "vignette"
+      ],
+      "targets": [
+        "Mat.S1_Default00_PPMI",
+        "PPC.S1_FlightVehicleBlur_PPC.MaterialEffect_0"
+      ]
+    },
+    "nostrumFlash+vignette": {
+      "file": "assets/nostrumFlash+vignette/PostProcess.gpk",
+      "sha256": "6e76ce4dce9d453b4c07fbd6cd838fbf514ca5ae134f494c0d7253e94a952109",
+      "features": [
+        "nostrumFlash",
+        "vignette"
+      ],
+      "targets": [
+        "Mat.S1_Default00_PPMI",
+        "PPC.S1_Noctan_PPC.MaterialEffect_3"
+      ]
+    },
+    "flyingDashBlur+nostrumFlash+vignette": {
+      "file": "assets/flyingDashBlur+nostrumFlash+vignette/PostProcess.gpk",
+      "sha256": "615edb3b14a3e9c5ddecc7e9733a58064dd13f86bed22489712b117dfada47a7",
+      "features": [
+        "flyingDashBlur",
+        "nostrumFlash",
+        "vignette"
+      ],
+      "targets": [
+        "Mat.S1_Default00_PPMI",
+        "PPC.S1_FlightVehicleBlur_PPC.MaterialEffect_0",
+        "PPC.S1_Noctan_PPC.MaterialEffect_3"
+      ]
     }
   }
 }

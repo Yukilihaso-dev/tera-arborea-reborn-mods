@@ -5,6 +5,7 @@ function selectAssetVariant(settings, manifest) {
     const features = [];
     if (settings.hideFlyingDashBlur) features.push('flyingDashBlur');
     if (settings.hideNostrumFlash) features.push('nostrumFlash');
+    if (settings.hideVignette) features.push('vignette');
     if (!features.length) return null;
     const entry = manifest.variants?.[features.join('+')];
     if (!entry || JSON.stringify(entry.features) !== JSON.stringify(features)) throw new Error('Invalid asset variant');

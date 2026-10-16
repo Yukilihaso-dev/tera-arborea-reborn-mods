@@ -6,6 +6,7 @@ const {applyCameraShakePolicy, bindCameraShakePolicy} = require('./lib/camera-sh
 const {installSelectedAssets} = require('./lib/asset-selection');
 const {createHandEffect} = require('./lib/hand-effect');
 const {createHandEffects} = require('./lib/hand-effects');
+const {createRemoteHandEffects} = require('./lib/remote-hand-effects');
 
 class ClientMod {
     constructor(mod, moduleRoot = __dirname) {
@@ -32,11 +33,13 @@ class NetworkMod {
         this.disposeCamera = bindCameraShakePolicy(mod, this.state.clientEligible && this.state.settings.disableScreenShake);
         this.handEffect = createHandEffect(mod, this.state);
         this.handEffects = createHandEffects(mod, this.state, this.handEffect);
+        this.remoteHandEffects = createRemoteHandEffects(mod, this.state, this.handEffect);
     }
 
     destructor() {
         this.disposeCamera();
         this.handEffects.dispose();
+        this.remoteHandEffects.dispose();
         this.handEffect.dispose();
     }
 }

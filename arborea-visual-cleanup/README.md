@@ -1,6 +1,6 @@
 # Arborea Visual Cleanup
 
-Removes nostrum hand glow, blue screen flashes, flying mount dash blur and camera shake.
+Removes nostrum hand glow from you and other players, blue screen flashes, flying mount dash blur, vignette and camera shake.
 
 Place `arborea-visual-cleanup` in your Toolbox `mods` folder, then restart Toolbox and TERA.
 

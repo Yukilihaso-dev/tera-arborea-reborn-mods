@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
 const sessions = new WeakMap();
-const settingNames = ['hideHandGlow', 'hideNostrumFlash', 'hideFlyingDashBlur', 'disableScreenShake'];
+const settingNames = ['hideHandGlow', 'hideNostrumFlash', 'hideFlyingDashBlur', 'disableScreenShake', 'hideVignette'];
 
 function readJson(root, name) {
     return JSON.parse(fs.readFileSync(path.join(root, name), 'utf8').replace(/^\uFEFF/, ''));
@@ -35,8 +35,9 @@ function getClientState(clientInterface, moduleRoot) {
     const saved = readJson(moduleRoot, 'config.json');
     const settings = {};
     for (const name of settingNames) {
-        if (typeof saved[name] !== 'boolean') throw new Error(`Invalid setting: ${name}`);
-        settings[name] = saved[name];
+        const value = name === 'hideVignette' && saved[name] === undefined ? true : saved[name];
+        if (typeof value !== 'boolean') throw new Error(`Invalid setting: ${name}`);
+        settings[name] = value;
     }
     const baseline = readJson(moduleRoot, 'baseline.json');
     const info = clientInterface.info;

@@ -2,5 +2,6 @@
   "hideHandGlow": true,
   "hideNostrumFlash": true,
   "hideFlyingDashBlur": true,
-  "disableScreenShake": true
+  "disableScreenShake": true,
+  "hideVignette": true
 }
