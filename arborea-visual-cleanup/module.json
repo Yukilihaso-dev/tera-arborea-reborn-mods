@@ -1,6 +1,6 @@
 {
   "name": "arborea-visual-cleanup",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Removes nostrum glow on all players, screen flashes, flying dash blur, vignette and camera shake.",
   "disableAutoUpdate": true,
   "keywords": ["client", "network"],

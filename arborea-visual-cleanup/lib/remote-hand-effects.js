@@ -132,6 +132,14 @@ function createRemoteHandEffects(mod, state, clearer) {
                 if (actor && players.get(actor.id) === actor) schedule(actor, 'activation', 'hand-buff');
             });
         }
+        observe('S_PARTY_MEMBER_BUFF_UPDATE', 2, event => {
+            const int32 = value => Number.isInteger(value) && value >= -0x80000000 && value <= 0x7fffffff;
+            if (!Array.isArray(event.abnormals) || !event.abnormals.some(entry =>
+                entry !== null && typeof entry === 'object' && !Array.isArray(entry) && entry.id === 900008 &&
+                int32(entry.duration) && int32(entry.unk) && int32(entry.stacks))) return;
+            const key = identity(event), actor = key === null ? null : identities.get(key);
+            if (actor && players.get(actor.id) === actor) schedule(actor, 'transition', 'party-buff-snapshot');
+        });
         observe('C_LOAD_TOPO_FIN', 1, event => {
             if (event.$fake === false) settleAll('client-load-finish');
         }, false);
