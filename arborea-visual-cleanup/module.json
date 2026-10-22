@@ -1,10 +1,15 @@
 {
   "name": "arborea-visual-cleanup",
-  "version": "1.2.1-experimental",
-  "description": "Visual cleanup with experimental character-selection settings v2; requires a new explicit opt-in and is disabled by default.",
+  "version": "1.2.1",
+  "description": "Removes hand glow, blue flashes, flying dash blur, vignette and camera shake, with optional automatic video settings.",
   "disableAutoUpdate": true,
-  "keywords": ["client", "network"],
-  "dependencies": {"tera-game-state": ""},
+  "keywords": [
+    "client",
+    "network"
+  ],
+  "dependencies": {
+    "tera-game-state": ""
+  },
   "options": {
     "guiName": "Arborea Visual Cleanup",
     "cliName": "VisualCleanup",
