@@ -1,0 +1,19 @@
+{
+  "version": 2,
+  "packages": [
+    {
+      "source": "S1Game/CookedPC/Art_Data/Packages/S1UI/S1UI_SystemOption.gpk",
+      "sourceSha256": "ddc84364bcadd34732f3edd703f6e1d2b332c83135ea4fed71a97e0af436b434",
+      "file": "assets/lobby-video-settings-v2/S1UI_SystemOption.gpk",
+      "sha256": "62918dd411b7cb05a461b5f86daff847f93898926343b471ba51954e854ffd98",
+      "destination": "S1UI_SystemOption.gpk"
+    },
+    {
+      "source": "S1Game/CookedPC/Art_Data/Packages/S1UI/S1UI_SelectCharacter.gpk",
+      "sourceSha256": "ca207539deb01d8cb0938eb47958d96efddf9aacb4e7972f7df3c48ddb5bf1a2",
+      "file": "assets/lobby-video-settings-v2/S1UI_SelectCharacter.gpk",
+      "sha256": "2e2e09fe930f8179e34c72fa49360991d63f9df03833dc2c6069019959c495d6",
+      "destination": "S1UI_SelectCharacter.gpk"
+    }
+  ]
+}

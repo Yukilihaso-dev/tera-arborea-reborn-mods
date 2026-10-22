@@ -4,6 +4,7 @@ const path = require('path');
 const {getClientState} = require('./lib/client-state');
 const {applyCameraShakePolicy, bindCameraShakePolicy} = require('./lib/camera-shake');
 const {installSelectedAssets} = require('./lib/asset-selection');
+const {installLobbyVideoSettings} = require('./lib/lobby-video-settings');
 const {createHandEffect} = require('./lib/hand-effect');
 const {createHandEffects} = require('./lib/hand-effects');
 const {createRemoteHandEffects} = require('./lib/remote-hand-effects');
@@ -11,6 +12,7 @@ const {createRemoteHandEffects} = require('./lib/remote-hand-effects');
 class ClientMod {
     constructor(mod, moduleRoot = __dirname) {
         this.state = getClientState(mod.clientInterface, moduleRoot);
+        this.log = typeof mod.log === 'function' ? mod.log.bind(mod) : null;
         if (this.state.clientEligible) {
             this.cameraResult = applyCameraShakePolicy(mod.clientInterface, this.state.settings.disableScreenShake);
         }
@@ -22,6 +24,14 @@ class ClientMod {
             this.assetResult = await installSelectedAssets(installer, this.state, manifest);
         } catch (_) {
             this.assetResult = {applied: false, features: []};
+        }
+        let lobbyManifest;
+        try {
+            lobbyManifest = JSON.parse(fs.readFileSync(path.join(this.state.moduleRoot, 'assets/lobby-video-settings-v2/manifest.json'), 'utf8'));
+        } catch (_) {}
+        this.lobbyVideoSettingsResult = await installLobbyVideoSettings(installer, this.state, lobbyManifest);
+        if (!this.lobbyVideoSettingsResult.applied && this.log) {
+            this.log(`Character-selection video settings skipped: ${this.lobbyVideoSettingsResult.reason}`);
         }
         return this.assetResult;
     }

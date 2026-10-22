@@ -1,7 +1,7 @@
 {
   "name": "arborea-visual-cleanup",
-  "version": "1.1.1",
-  "description": "Removes nostrum glow on all players, screen flashes, flying dash blur, vignette and camera shake.",
+  "version": "1.2.1-experimental",
+  "description": "Visual cleanup with experimental character-selection settings v2; requires a new explicit opt-in and is disabled by default.",
   "disableAutoUpdate": true,
   "keywords": ["client", "network"],
   "dependencies": {"tera-game-state": ""},
