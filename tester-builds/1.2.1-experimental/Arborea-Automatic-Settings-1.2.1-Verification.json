@@ -1,0 +1,259 @@
+{
+  "version": "1.2.1-experimental",
+  "sourceCommit": "bb3343eb60fafe6a1c926a5865641459a5f106f6",
+  "enabledByDefault": false,
+  "experimentalOptIn": "applyVideoSettingsAtCharacterSelectV2",
+  "retiredOptionIgnored": true,
+  "oldUIAssetsIncluded": false,
+  "enableInstallerIncluded": false,
+  "nativeGameTestPerformed": false,
+  "nativeCrashResolutionProven": false,
+  "installedOnUserPC": false,
+  "pcLogsRead": false,
+  "offlineTests": {
+    "runtimeJS": 47,
+    "AVM1Model": 30,
+    "builderAndDeliveredMovies": 24,
+    "failed": 0,
+    "skipped": 0
+  },
+  "fixedControlSchema": {
+    "pinnedIndexEntries": 40,
+    "requiredNonFSControls": 29,
+    "serializedFields": 30
+  },
+  "deterministicRebuild": true,
+  "independentBinaryScan": {
+    "SelectCharacter": [
+      {
+        "bytes": 420197,
+        "action_tags": 189,
+        "lists": 1544,
+        "ends": 189,
+        "exporter": {
+          "version": "0x364",
+          "flags": "0x2",
+          "bitmap_format": 13,
+          "prefix": "",
+          "swf_name": "SelectCharacter",
+          "tail": ""
+        },
+        "file_attributes": [
+          "0x0"
+        ]
+      },
+      {
+        "bytes": 426174,
+        "action_tags": 189,
+        "lists": 1550,
+        "ends": 189,
+        "exporter": {
+          "version": "0x364",
+          "flags": "0x2",
+          "bitmap_format": 13,
+          "prefix": "",
+          "swf_name": "SelectCharacter",
+          "tail": ""
+        },
+        "file_attributes": [
+          "0x0"
+        ]
+      },
+      {
+        "tag_count": 2390,
+        "non_action_bodies_changed": [],
+        "new_opcode_types": [
+          "0x10"
+        ]
+      },
+      {
+        "ctor_pool_at": "0x89bb",
+        "manual_pool_at": "0x89bb",
+        "pool_size": 276,
+        "manual_constant_refs": [
+          {
+            "index": 64,
+            "value": "SystemOption\t1"
+          },
+          {
+            "index": 1,
+            "value": "g4"
+          },
+          {
+            "index": 3,
+            "value": "view"
+          },
+          {
+            "index": 4,
+            "value": "selectCharacter"
+          },
+          {
+            "index": 8,
+            "value": "SelectCharacterController"
+          },
+          {
+            "index": 9,
+            "value": "getInstance"
+          },
+          {
+            "index": 65,
+            "value": "ToGame_MainMenu_RequestShowUI"
+          }
+        ],
+        "manual_register_reads": [],
+        "manual_action_codes": [
+          "0x96",
+          "0x1c",
+          "0x96",
+          "0x4e",
+          "0x96",
+          "0x4e",
+          "0x96",
+          "0x4e",
+          "0x96",
+          "0x52",
+          "0x96",
+          "0x52",
+          "0x17"
+        ]
+      }
+    ],
+    "SystemOption": [
+      {
+        "bytes": 400583,
+        "action_tags": 120,
+        "lists": 1453,
+        "ends": 120,
+        "exporter": {
+          "version": "0x364",
+          "flags": "0x0",
+          "bitmap_format": 13,
+          "prefix": "",
+          "swf_name": "SystemOption",
+          "tail": ""
+        },
+        "file_attributes": [
+          "0x0"
+        ]
+      },
+      {
+        "bytes": 415277,
+        "action_tags": 120,
+        "lists": 1467,
+        "ends": 120,
+        "exporter": {
+          "version": "0x364",
+          "flags": "0x0",
+          "bitmap_format": 13,
+          "prefix": "",
+          "swf_name": "SystemOption",
+          "tail": ""
+        },
+        "file_attributes": [
+          "0x0"
+        ]
+      },
+      {
+        "tag_count": 907,
+        "non_action_bodies_changed": [],
+        "new_opcode_types": [
+          "0x10",
+          "0x11"
+        ]
+      }
+    ]
+  },
+  "actualToolboxRuntimePreflight": {
+    "node": "12.18.3",
+    "electron": "11.0.5",
+    "cases": [
+      {
+        "name": "shipped_off",
+        "calls": [
+          "PostProcess.gpk"
+        ],
+        "uiApplied": false,
+        "uiReason": "Character-selection video settings v2 are disabled."
+      },
+      {
+        "name": "legacy_true_only",
+        "calls": [
+          "PostProcess.gpk"
+        ],
+        "uiApplied": false,
+        "uiReason": "Character-selection video settings v2 are disabled."
+      },
+      {
+        "name": "invalid_new_flag",
+        "calls": [
+          "PostProcess.gpk"
+        ],
+        "uiApplied": false,
+        "uiReason": "Character-selection video settings v2 are disabled."
+      },
+      {
+        "name": "v2_opt_in",
+        "calls": [
+          "PostProcess.gpk",
+          "S1UI_SystemOption.gpk",
+          "S1UI_SelectCharacter.gpk"
+        ],
+        "uiApplied": true,
+        "uiReason": null
+      },
+      {
+        "name": "v1_manifest_rejected",
+        "calls": [
+          "PostProcess.gpk"
+        ],
+        "uiApplied": false,
+        "uiReason": "Invalid character-selection video settings manifest."
+      }
+    ],
+    "recordingInstallerOnly": true,
+    "nativePackageInstallation": false,
+    "gameLaunched": false,
+    "ok": true
+  },
+  "reviews": {
+    "runtime": "passed scoped review",
+    "UI": "passed after manual/hide pre-claim cancellation fixes",
+    "artifacts": "passed; final runtime includes both guide and linked TESTING.md"
+  },
+  "uiPackages": [
+    {
+      "source": "S1Game/CookedPC/Art_Data/Packages/S1UI/S1UI_SystemOption.gpk",
+      "sourceSha256": "ddc84364bcadd34732f3edd703f6e1d2b332c83135ea4fed71a97e0af436b434",
+      "file": "assets/lobby-video-settings-v2/S1UI_SystemOption.gpk",
+      "sha256": "62918dd411b7cb05a461b5f86daff847f93898926343b471ba51954e854ffd98",
+      "destination": "S1UI_SystemOption.gpk"
+    },
+    {
+      "source": "S1Game/CookedPC/Art_Data/Packages/S1UI/S1UI_SelectCharacter.gpk",
+      "sourceSha256": "ca207539deb01d8cb0938eb47958d96efddf9aacb4e7972f7df3c48ddb5bf1a2",
+      "file": "assets/lobby-video-settings-v2/S1UI_SelectCharacter.gpk",
+      "sha256": "2e2e09fe930f8179e34c72fa49360991d63f9df03833dc2c6069019959c495d6",
+      "destination": "S1UI_SelectCharacter.gpk"
+    }
+  ],
+  "runtimeModuleFileCount": 24,
+  "runtimeTopLevelDocuments": [
+    "TESTER-GUIDE.txt",
+    "TESTING.md"
+  ],
+  "sourceArchiveExcludesWithdrawnV1Assets": true,
+  "artifacts": {
+    "Arborea-Automatic-Settings-1.2.1-experimental.zip": {
+      "sha256": "b4aee0191db076f421366437db92316f552351ce7efb32b937649a6415340fc4",
+      "bytes": 12731219
+    },
+    "Arborea-Automatic-Settings-1.2.1-Source.zip": {
+      "sha256": "adb22abaa75c7cc65de4b582eeb39fa0da8b3161d5c3de171ae7ff3721c1e11c",
+      "bytes": 12773668
+    },
+    "Arborea-Automatic-Settings-1.2.1-Tester-Guide.txt": {
+      "sha256": "f60856bf4e2c81d5e72a4e616ca3ef4f0e93118b8e5691df686aa0f8b8a32c75",
+      "bytes": 3971
+    }
+  }
+}

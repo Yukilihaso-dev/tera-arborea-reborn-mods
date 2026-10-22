@@ -1,0 +1,69 @@
+ARBOREA AUTOMATIC SETTINGS 1.2.1 -- EXPERIMENTAL TESTER BUILD
+
+Automation is OFF in the supplied config. This ZIP does not enable or install
+anything by itself. No replacement has been installed on Julia's PC.
+
+The old 1.2.0 experiment is withdrawn. Its exact native crash cause is unproven.
+This revision fixes the reproduced readiness and retained-enable flaws and
+changes the timing of the added UI requests. Offline tests do not establish
+native crash freedom. This build is for an intentional tester trial first.
+
+What changed
+
+- The old applyVideoSettingsAtCharacterSelect flag cannot enable this version.
+  A new applyVideoSettingsAtCharacterSelectV2 flag requires literal true.
+  Missing, false or malformed new values keep automation off.
+- Readiness uses a fixed schema from the exact client's real controls. Missing
+  controls cannot reduce the required saved-value coverage. Original saved-value
+  parsing and serialization are retained and checked before submission.
+- Constructors and incoming show/data callbacks do not issue the added native
+  Open/Apply/Close requests. Later owned UI steps open, validate/apply and close,
+  with cancellation on manual use, stale ownership or missing data.
+- The temporary Settings window stays visible while pending. If the attempt
+  cancels, it may remain available for normal manual use. Timeouts only cancel.
+
+Install with automation OFF first
+
+1. Close TERA and Toolbox completely. Preserve your current module folder and
+   config OUTSIDE Toolbox's mods folder. A renamed module left in mods can still
+   load, so keep only one arborea-visual-cleanup module there.
+2. Extract this ZIP into a clean module folder rather than overlaying the old
+   one. It contains arborea-visual-cleanup plus these instructions.
+3. In the new config.json, preserve your five original cleanup booleans:
+   hideHandGlow, hideNostrumFlash, hideFlyingDashBlur, disableScreenShake,
+   hideVignette. The supplied cleanup defaults are all true; keep your own choices.
+4. Keep applyVideoSettingsAtCharacterSelectV2 false for this first run. The old
+   flag is retired and may remain false. Do not run any old enable installer.
+5. Verify the old modified S1UI_SystemOption.gpk and S1UI_SelectCharacter.gpk
+   overrides are absent from Toolbox's managed override folder before the fresh
+   disabled baseline. Toolbox cache cleanup is best effort. Preserve unrelated
+   overrides and the original game source packages; do not delete the game files.
+6. Start Toolbox and TERA normally. Confirm character selection and ordinary
+   cleanup with automation still off. No modified UI package should be requested
+   by this module in the disabled state.
+
+Only then opt in deliberately
+
+Close both applications again. Change ONLY the new flag in config.json to:
+
+  "applyVideoSettingsAtCharacterSelectV2": true
+
+Fully restart both applications. The exact client revision and original package
+fingerprints must match; other clients skip the automatic feature.
+
+At character selection, saved video values should populate the temporary visible
+Settings window, apply once, and close on a later UI step. Check the visual result
+and that your saved video choices/resolution have not changed. Manual interaction,
+missing data or a changed screen may cancel the automatic attempt and leave the
+normal dialog open. Normal Options > Video > Apply remains available.
+
+Stop and recover for any failure
+
+Set the v2 flag false with both applications closed. Verify the two modified UI
+overrides are absent before restarting. For complete rollback, restore the
+preserved prepatch 1.1.1 module into a clean folder with your five cleanup choices.
+Do not keep a second active copy in mods or rerun the withdrawn 1.2.0 installer.
+
+No logs from Julia's PC are needed. A useful tester observation is whether any
+failure occurs before Settings appears, while it is visible, or after it applies.
+That observation does not replace a native diagnosis or prove a future fix.

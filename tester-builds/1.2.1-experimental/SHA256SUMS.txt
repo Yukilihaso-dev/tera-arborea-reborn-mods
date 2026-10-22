@@ -1,0 +1,4 @@
+b4aee0191db076f421366437db92316f552351ce7efb32b937649a6415340fc4  Arborea-Automatic-Settings-1.2.1-experimental.zip
+adb22abaa75c7cc65de4b582eeb39fa0da8b3161d5c3de171ae7ff3721c1e11c  Arborea-Automatic-Settings-1.2.1-Source.zip
+f60856bf4e2c81d5e72a4e616ca3ef4f0e93118b8e5691df686aa0f8b8a32c75  Arborea-Automatic-Settings-1.2.1-Tester-Guide.txt
+3810b76f0bc7790e0eb9575ea8d95f1851cd5bee336f39d199ccea50ae4bf8a0  Arborea-Automatic-Settings-1.2.1-Verification.json
