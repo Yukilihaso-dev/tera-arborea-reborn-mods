@@ -29,7 +29,7 @@ Edit `arborea-visual-cleanup/config.json` and restart the client. All options ar
 | `hideFlyingDashBlur` | `true` | Removes the flying dash blur. |
 | `hideVignette` | `true` | Removes the screen vignette. |
 | `disableScreenShake` | `true` | Asks the client to turn off camera shake. |
-| `applyVideoSettingsAtCharacterSelectV2` | `false` | Experimental: installs patched UI packages for the video settings at character selection. |
+| `applyVideoSettingsAtCharacterSelectV2` | `false` | Experimental: installs patched UI packages so your saved video settings are applied at character selection (see below). Off by default. |
 | `applyVideoSettingsAtCharacterSelect` | n/a | Retired. It is ignored and always treated as off. |
 
 A missing `hideVignette` falls back to `true`. Every other cleanup option must be present and must be a boolean, otherwise the module refuses to load.
@@ -52,6 +52,10 @@ Shader changes skipped: this client build does not match the supported baseline.
 - **Hand glow** (`lib/hand-effects.js`, `lib/remote-hand-effects.js`): handled at runtime rather than by a file patch. The module sends `S_REMOVE_EFFECT` to the client shortly after the effect is triggered (buffs, played effects, spawns, resurrection, loading screens). Remote players are tracked individually, up to 1024 at a time.
 - **Camera shake** (`lib/camera-shake.js`): re-applied on entering the game and after each loading screen.
 - **Character-selection video settings** (`lib/lobby-video-settings.js`): replaces `S1UI_SystemOption.gpk` and `S1UI_SelectCharacter.gpk` only when both source files and both replacements match their expected fingerprints.
+
+### Character select looks different from in-game
+
+The game loads a default preset at character selection instead of your saved video settings, so effects such as the vignette can still show there until you open the video settings and confirm them without changing anything. Because players pass through character select very often, the module can work around this: set `applyVideoSettingsAtCharacterSelectV2` to `true` to install the patched UI packages that are intended to apply your saved settings at that screen. This only installs when the client build and both original UI packages match their expected fingerprints.
 
 ### Troubleshooting
 
