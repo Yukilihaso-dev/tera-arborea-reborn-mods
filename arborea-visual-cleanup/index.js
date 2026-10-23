@@ -4,6 +4,7 @@ const path = require('path');
 const {getClientState} = require('./lib/client-state');
 const {applyCameraShakePolicy, bindCameraShakePolicy} = require('./lib/camera-shake');
 const {installSelectedAssets} = require('./lib/asset-selection');
+const {installLobbyVideoSettings} = require('./lib/lobby-video-settings');
 const {createHandEffect} = require('./lib/hand-effect');
 const {createHandEffects} = require('./lib/hand-effects');
 const {createRemoteHandEffects} = require('./lib/remote-hand-effects');
@@ -22,6 +23,11 @@ class ClientMod {
             this.assetResult = await installSelectedAssets(installer, this.state, manifest);
         } catch (_) {
             this.assetResult = {applied: false, features: []};
+        }
+        try {
+            this.lobbyVideoSettingsResult = await installLobbyVideoSettings(installer, this.state);
+        } catch (_) {
+            this.lobbyVideoSettingsResult = {applied: false, installed: []};
         }
         return this.assetResult;
     }

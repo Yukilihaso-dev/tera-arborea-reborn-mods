@@ -39,6 +39,8 @@ function getClientState(clientInterface, moduleRoot) {
         if (typeof value !== 'boolean') throw new Error(`Invalid setting: ${name}`);
         settings[name] = value;
     }
+    // On by default; set to false in config.json to leave the character-select screen untouched.
+    settings.applyVideoSettingsAtCharacterSelect = saved.applyVideoSettingsAtCharacterSelect === undefined ? true : saved.applyVideoSettingsAtCharacterSelect === true;
     const baseline = readJson(moduleRoot, 'baseline.json');
     const info = clientInterface.info;
     if (!info || typeof info.path !== 'string') throw new Error('Client path unavailable');

@@ -1,7 +1,7 @@
 {
   "name": "arborea-visual-cleanup",
-  "version": "1.1.2",
-  "description": "Removes nostrum glow on all players, screen flashes, flying dash blur, vignette and camera shake.",
+  "version": "1.4.0",
+  "description": "Removes nostrum glow on all players, screen flashes, flying dash blur, vignette and camera shake, and applies your saved video settings at character select.",
   "disableAutoUpdate": false,
   "servers": ["https://raw.githubusercontent.com/Yukilihaso-dev/tera-arborea-reborn-mods/main/arborea-visual-cleanup/"],
   "keywords": ["client", "network"],

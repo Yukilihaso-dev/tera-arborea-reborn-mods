@@ -19,7 +19,7 @@ Removes distracting visual effects from the game client:
 - screen vignette
 - camera shake
 
-It does not touch the character-select or server-select screens.
+It also applies your saved video settings at character select. The game otherwise loads a default preset there, so the effects above would still show until you confirmed the video settings by hand.
 
 ### Installation
 
@@ -33,11 +33,15 @@ Publishing a release (maintainers): bump `version` in the module's `module.json`
 
 ### Configuration
 
-Edit `arborea-visual-cleanup/config.json` and restart the client. All options are booleans: `hideHandGlow`, `hideNostrumFlash`, `hideFlyingDashBlur`, `disableScreenShake` and `hideVignette` (all `true` by default).
+Edit `arborea-visual-cleanup/config.json` and restart the client. All options are booleans: `hideHandGlow`, `hideNostrumFlash`, `hideFlyingDashBlur`, `disableScreenShake`, `hideVignette` and `applyVideoSettingsAtCharacterSelect` (all `true` by default). Set `applyVideoSettingsAtCharacterSelect` to `false` to leave the character-select screen untouched.
 
 ### Supported client
 
-The shader changes are verified by SHA-256 fingerprint against one exact client build, recorded in `baseline.json` (Arborea Reborn #2.1.6-1, Live-100.02). On any other build, or if `PostProcess.gpk` was already modified by something else, the module leaves the game files alone.
+The shader and UI changes are verified by SHA-256 fingerprint against one exact client build, recorded in `baseline.json` (Arborea Reborn #2.1.6-1, Live-100.02). On any other build, or if one of the game files was already modified by something else, the module leaves the game files alone.
+
+### How the character-select fix works
+
+Two UI packages (`S1UI_SystemOption.gpk`, `S1UI_SelectCharacter.gpk`) are replaced through Tera Toolbox. They are stored in the game's own compressed package format; an uncompressed repack crashes the client. The character-select screen opens the options window and confirms it, which makes the game apply your real settings.
 ## arborea-auto-potions
 
 Inventory-aware HP and MP auto potions with a local GUI and the current Arborea item catalog. See [its README](arborea-auto-potions/README.md).
