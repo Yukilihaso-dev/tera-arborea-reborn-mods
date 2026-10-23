@@ -1,18 +1,11 @@
 {
   "name": "arborea-visual-cleanup",
-  "version": "1.3.0",
-  "description": "Removes hand glow, blue flashes, flying dash blur, vignette and camera shake, with optional automatic video settings.",
-  "servers": [
-    "https://raw.githubusercontent.com/Yukilihaso-dev/tera-arborea-reborn-mods/main/arborea-visual-cleanup/"
-  ],
+  "version": "1.1.2",
+  "description": "Removes nostrum glow on all players, screen flashes, flying dash blur, vignette and camera shake.",
   "disableAutoUpdate": false,
-  "keywords": [
-    "client",
-    "network"
-  ],
-  "dependencies": {
-    "tera-game-state": ""
-  },
+  "servers": ["https://raw.githubusercontent.com/Yukilihaso-dev/tera-arborea-reborn-mods/main/arborea-visual-cleanup/"],
+  "keywords": ["client", "network"],
+  "dependencies": {"tera-game-state": ""},
   "options": {
     "guiName": "Arborea Visual Cleanup",
     "cliName": "VisualCleanup",

@@ -19,22 +19,18 @@
     "assets/flyingDashBlur+nostrumFlash/PostProcess.gpk": "ceca793a4c1ba94c6772601a62fb51eab5f356f5f7e5fe1071b9828fbfb3e6ff",
     "assets/flyingDashBlur+vignette/PostProcess.gpk": "2a8962a68f95d9f14390ec252e447ca1652b095d30e0c6bb7f4c251365f6668a",
     "assets/flyingDashBlur/PostProcess.gpk": "6e34afeb54df80e442fbe08b23cc6f2866c67614e2b879da868c01af4b9be03f",
-    "assets/lobby-video-settings-v2/S1UI_SelectCharacter.gpk": "2e2e09fe930f8179e34c72fa49360991d63f9df03833dc2c6069019959c495d6",
-    "assets/lobby-video-settings-v2/S1UI_SystemOption.gpk": "62918dd411b7cb05a461b5f86daff847f93898926343b471ba51954e854ffd98",
-    "assets/lobby-video-settings-v2/manifest.json": "d349d2e917741731a6480290a6117410c444132d17bd676e16994b4170ceda53",
     "assets/manifest.json": "35230b91fc7a6a3653188cdeec1c58ccc445fc55b8a71d3507df8ac5f244cd66",
     "assets/nostrumFlash+vignette/PostProcess.gpk": "6e76ce4dce9d453b4c07fbd6cd838fbf514ca5ae134f494c0d7253e94a952109",
     "assets/nostrumFlash/PostProcess.gpk": "55877668f573b84f5a60a485f372e6212b1e6a4db009e06c787fbd63d4c0a04b",
     "assets/vignette/PostProcess.gpk": "0df47a8230821d142030fb0d886975a1982bb167a9608a9d23bf227405ad647f",
     "baseline.json": "1eb20c140d32fe280b4570fba420f2a7f2c9248d12fe166feb3882fd383e7684",
-    "index.js": "a4444a8f39e5d5ce1c914f7d0d229420093b581b77dc6f1cc9069926d73568f8",
+    "index.js": "50aa1c58fa4c3f1bfaba0e8aa352b022a5ab13c45b3cf3f36c34cb938c993a9f",
     "lib/asset-selection.js": "80689b1babe5f4e5f29b5ed76aec9cc3b304453bb3a70d341c6544d6a0df4567",
     "lib/camera-shake.js": "5cc63898415f205dcdb0292202306bfaff947819a457f73954d0473dfe0d002e",
-    "lib/client-state.js": "f354f7cb57bb58c772c2c923abb288708a70040d08fb01ff3bd11eb95734d1e0",
+    "lib/client-state.js": "cb68c22301336fe9cb1125e4aff421138c97a4334ff1359b8ea5a0b90336379f",
     "lib/hand-effect.js": "313063f5f351423943b9f08aecdc065148ba328e414bd96c0b65aaf9b96c51b8",
     "lib/hand-effects.js": "424a7971cd1df30b039d35c832f1823635292ee5d80f03a894146f6d178c63c1",
-    "lib/lobby-video-settings.js": "8749a6c7d8dc3fc5fc7e25d8897a9250631baacd284ff2b89285138464a64668",
     "lib/remote-hand-effects.js": "589310c45084a89f2bac16178e503e21958b72f0a5390ba6866e9069eebad1b2",
-    "module.json": "de224550c46db800190a7824b4b72b7bc739b29a868db529853a8409942a25cb"
+    "module.json": "94c05007c60eede3215d73c89f8c974da838925b2a5e8b696b0a7da651622987"
   }
 }

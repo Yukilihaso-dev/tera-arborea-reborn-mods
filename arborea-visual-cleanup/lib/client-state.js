@@ -34,16 +34,11 @@ function getClientState(clientInterface, moduleRoot) {
     if (sessions.has(clientInterface)) return sessions.get(clientInterface);
     const saved = readJson(moduleRoot, 'config.json');
     const settings = {};
-    const defaults = {hideVignette: true};
     for (const name of settingNames) {
-        const value = saved[name] === undefined ? defaults[name] : saved[name];
+        const value = name === 'hideVignette' && saved[name] === undefined ? true : saved[name];
         if (typeof value !== 'boolean') throw new Error(`Invalid setting: ${name}`);
         settings[name] = value;
     }
-    // The withdrawn opt-in is retired even if an existing config retains true or malformed data.
-    settings.applyVideoSettingsAtCharacterSelect = false;
-    // Missing or malformed experimental settings fail closed without disabling base cleanup.
-    settings.applyVideoSettingsAtCharacterSelectV2 = saved.applyVideoSettingsAtCharacterSelectV2 === true;
     const baseline = readJson(moduleRoot, 'baseline.json');
     const info = clientInterface.info;
     if (!info || typeof info.path !== 'string') throw new Error('Client path unavailable');

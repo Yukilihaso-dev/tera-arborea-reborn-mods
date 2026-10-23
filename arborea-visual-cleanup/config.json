@@ -3,7 +3,5 @@
   "hideNostrumFlash": true,
   "hideFlyingDashBlur": true,
   "disableScreenShake": true,
-  "hideVignette": true,
-  "applyVideoSettingsAtCharacterSelect": false,
-  "applyVideoSettingsAtCharacterSelectV2": true
+  "hideVignette": true
 }
