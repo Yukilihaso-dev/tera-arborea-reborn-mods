@@ -12,8 +12,8 @@ const path = require('path');
 const crypto = require('crypto');
 
 const modules = ['arborea-visual-cleanup', 'arborea-auto-potions'];
-// Never shipped by the updater: the manifest itself, and the user's own settings.
-const excludedAtRoot = new Set(['manifest.json', 'config.json', 'settings.json', 'settings.json.bak']);
+// Never shipped by the updater: the manifest itself, the user's own settings, and docs/licence files that are not needed to run.
+const excludedAtRoot = new Set(['manifest.json', 'config.json', 'settings.json', 'settings.json.bak', 'README.md', 'LICENSE']);
 
 function listFiles(dir, prefix = '') {
     return fs.readdirSync(dir, {withFileTypes: true}).flatMap(entry => {
