@@ -29,7 +29,7 @@ Edit `arborea-visual-cleanup/config.json` and restart the client. All options ar
 | `hideFlyingDashBlur` | `true` | Removes the flying dash blur. |
 | `hideVignette` | `true` | Removes the screen vignette. |
 | `disableScreenShake` | `true` | Asks the client to turn off camera shake. |
-| `applyVideoSettingsAtCharacterSelectV2` | `false` | Experimental: installs patched UI packages so your saved video settings are applied at character selection (see below). Off by default. |
+| `applyVideoSettingsAtCharacterSelectV2` | `true` | Installs patched UI packages so your saved video settings are applied at character selection (see below). Set to `false` to leave the original UI files untouched. |
 | `applyVideoSettingsAtCharacterSelect` | n/a | Retired. It is ignored and always treated as off. |
 
 A missing `hideVignette` falls back to `true`. Every other cleanup option must be present and must be a boolean, otherwise the module refuses to load.
@@ -55,7 +55,7 @@ Shader changes skipped: this client build does not match the supported baseline.
 
 ### Character select looks different from in-game
 
-The game loads a default preset at character selection instead of your saved video settings, so effects such as the vignette can still show there until you open the video settings and confirm them without changing anything. Because players pass through character select very often, the module can work around this: set `applyVideoSettingsAtCharacterSelectV2` to `true` to install the patched UI packages that are intended to apply your saved settings at that screen. This only installs when the client build and both original UI packages match their expected fingerprints.
+The game loads a default preset at character selection instead of your saved video settings, so effects such as the vignette can still show there until you open the video settings and confirm them without changing anything. Because players pass through character select very often, the module works around this by installing patched UI packages that are intended to apply your saved settings at that screen (`applyVideoSettingsAtCharacterSelectV2`, enabled by default). This only installs when the client build and both original UI packages match their expected fingerprints.
 
 ### Troubleshooting
 

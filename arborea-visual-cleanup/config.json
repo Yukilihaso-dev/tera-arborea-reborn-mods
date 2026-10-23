@@ -5,5 +5,5 @@
   "disableScreenShake": true,
   "hideVignette": true,
   "applyVideoSettingsAtCharacterSelect": false,
-  "applyVideoSettingsAtCharacterSelectV2": false
+  "applyVideoSettingsAtCharacterSelectV2": true
 }
