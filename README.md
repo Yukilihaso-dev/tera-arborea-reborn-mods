@@ -18,6 +18,20 @@ It can also optionally apply video settings automatically at character selection
 
 Copy the `arborea-visual-cleanup` folder into your Tera Toolbox `mods` directory and restart Tera Toolbox.
 
+### Updating
+
+The module updates itself through Tera Toolbox. `module.json` points at this repository's `main` branch, and `manifest.json` lists every file with its SHA-256 hash, so Toolbox only downloads files that changed. `config.json` is deliberately left out of the manifest, so your own settings are never overwritten.
+
+The first time, install this version by hand (see Installation); after that, updates arrive automatically whenever Tera Toolbox starts and finds a newer release on `main`.
+
+Publishing a release (maintainers):
+
+1. Change the code and bump `version` in `arborea-visual-cleanup/module.json`.
+2. Run `node build-manifest.js` (use `node build-manifest.js --check` to verify). If you skip this, the hashes no longer match and the update fails.
+3. Commit and push to `main`. The updater only sees what is on `main`.
+
+If a new release adds a required option to `config.json`, give it a default in `lib/client-state.js` as well, because existing users keep their old `config.json` and a missing required option stops the module from loading.
+
 ### Configuration
 
 Edit `arborea-visual-cleanup/config.json` and restart the client. All options are booleans.
