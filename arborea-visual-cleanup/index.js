@@ -29,11 +29,31 @@ class ClientMod {
         try {
             lobbyManifest = JSON.parse(fs.readFileSync(path.join(this.state.moduleRoot, 'assets/lobby-video-settings-v2/manifest.json'), 'utf8'));
         } catch (_) {}
+        const assetMessage = this.describeAssetOutcome();
+        if (assetMessage && this.log) this.log(assetMessage);
         this.lobbyVideoSettingsResult = await installLobbyVideoSettings(installer, this.state, lobbyManifest);
         if (!this.lobbyVideoSettingsResult.applied && this.log) {
             this.log(`Character-selection video settings skipped: ${this.lobbyVideoSettingsResult.reason}`);
         }
         return this.assetResult;
+    }
+
+    // Explains why shader changes were or were not installed, so a silent
+    // "nothing happened" can be diagnosed from the log. Returns null when no
+    // shader option is enabled and there is nothing to report.
+    describeAssetOutcome() {
+        const {settings, clientEligible, assetEligible} = this.state;
+        if (this.assetResult && this.assetResult.applied) {
+            return `Shader changes installed: ${this.assetResult.features.join(', ')}.`;
+        }
+        if (!settings.hideFlyingDashBlur && !settings.hideNostrumFlash && !settings.hideVignette) return null;
+        if (!clientEligible) {
+            return 'Shader changes skipped: this client build does not match the supported baseline.';
+        }
+        if (!assetEligible) {
+            return 'Shader changes skipped: PostProcess.gpk does not match the expected original (modified by another mod or patch?).';
+        }
+        return 'Shader changes skipped: the module asset files could not be validated or installed.';
     }
 }
 
