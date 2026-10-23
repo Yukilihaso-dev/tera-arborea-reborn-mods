@@ -2,6 +2,13 @@
 
 Mods for Tera (Arborea Reborn) built as Tera Toolbox modules.
 
+## Mods
+
+- [arborea-visual-cleanup](#arborea-visual-cleanup)
+- [arborea-auto-potions](#arborea-auto-potions)
+
+Both update themselves through Tera Toolbox (see Updating).
+
 ## arborea-visual-cleanup
 
 Removes distracting visual effects from the game client:
@@ -76,3 +83,10 @@ The game loads a default preset at character selection instead of your saved vid
 - **Nothing changes:** check the Tera Toolbox log for a "skipped" message. It almost always means the client build or `PostProcess.gpk` does not match the baseline.
 - **Module fails to load:** a value in `config.json` is missing or is not `true`/`false`.
 - **Changed a setting but nothing happened:** the module is not reloadable, so restart Tera Toolbox and the client.
+
+## arborea-auto-potions
+
+Inventory-aware HP and MP auto potions with a local GUI and the current Arborea item catalog. See [its README](arborea-auto-potions/README.md).
+
+Install by copying the rborea-auto-potions folder into your Tera Toolbox mods directory. It updates itself the same way as the visual cleanup mod; your settings.json is never overwritten. Run 
+ode build-manifest.js before publishing a release of either mod.

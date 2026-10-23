@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+  <title>Arborea · Auto Potions</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to settings</a>
+  <div class="app">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M11 4h10M13 4v8L6 24c-1 2 0 4 3 4h14c3 0 4-2 3-4l-7-12V4M10 20h12"/></svg></span><div><strong>ARBOREA</strong><span>AUTO POTIONS</span></div></div>
+      <div class="connection"><span class="status-dot" id="connection-dot"></span><span id="connection-label">Browser preview</span><span class="version" id="version">v1.1</span></div>
+    </header>
+    <main id="main" tabindex="-1">
+      <div class="preview-banner" id="preview-banner"><strong>Browser preview</strong><span id="preview-description">No game connection. Settings stay in this window; saving is unavailable.</span></div>
+      <div class="heading"><div><p class="eyebrow">A LITTLE BACKUP, ON YOUR TERMS</p><h1>Stay in the fight.</h1><p>Choose your potions. Set your limits. Keep an eye on what is ready.</p></div><button class="button subtle" id="defaults-button" type="button">Reset draft</button></div>
+      <section class="master-panel" aria-labelledby="master-title">
+        <div class="master-copy"><div class="master-heading"><h2 id="master-title">Automatic potions</h2><span class="pill" id="automation-state">No live status</span></div><p id="status-reason">Connect Toolbox to see why automation is ready or waiting.</p></div>
+        <label class="switch master-switch"><input id="master-enabled" type="checkbox"><span class="switch-track" aria-hidden="true"></span><span>Enable</span></label>
+      </section>
+      <div class="conflict-banner" id="conflict-banner" role="alert" hidden><div><strong>Settings changed elsewhere.</strong><p>Your draft is safe. Load the current settings before saving again.</p></div><button class="button secondary" type="button" id="load-current">Load current</button></div>
+      <div id="feedback" class="feedback" role="status" aria-live="polite" hidden></div>
+      <div class="resource-grid">
+        <section class="resource-card health" aria-labelledby="hp-title">
+          <div class="card-heading"><div class="resource-title"><span class="resource-icon" aria-hidden="true">+</span><div><p class="eyebrow">HP SUPPORT</p><h2 id="hp-title">Health</h2></div></div><label class="switch"><input id="hp-enabled" type="checkbox" checked><span class="switch-track" aria-hidden="true"></span><span class="sr-only">Enable health potions</span></label></div>
+          <div class="live-resource"><div><span class="caption">CURRENT HEALTH</span><strong id="hp-live-value">—</strong></div><span id="hp-live-detail">Waiting for game data</span></div>
+          <div class="resource-meter" id="hp-meter" role="progressbar" aria-label="Current health" aria-valuemin="0" aria-valuemax="100"><div class="meter-fill" id="hp-fill"></div></div>
+          <div class="threshold-heading"><label for="hp-threshold">Use when below</label><div class="percent-input"><input id="hp-threshold" type="number" min="1" max="99" step="1" value="50" inputmode="numeric" aria-describedby="hp-error"><span>%</span></div></div>
+          <label class="sr-only" for="hp-slider">Health threshold percentage</label><input class="threshold-slider" id="hp-slider" type="range" min="1" max="99" step="1" value="50">
+          <div class="range-scale" aria-hidden="true"><span>1%</span><span>99%</span></div><p class="field-error" id="hp-error" hidden></p>
+          <label class="field-label" for="hp-potion">Preferred health potion</label><select id="hp-potion"><option value="0">Automatic · ordinary potions</option></select>
+          <p class="selection-note" id="hp-selection-note">Connect Toolbox to see verified potions and owned amounts.</p>
+          <details class="rotation-editor" id="hp-rotation-editor"><summary>Backup potions <span id="hp-backup-count">No backup</span></summary>
+            <p class="rotation-note" id="hp-rotation-note">No backup selected. Only the preferred potion will be used.</p>
+            <ol class="fallbacks" id="hp-fallbacks" aria-label="Health backup priority"></ol>
+            <div class="fallback-picker"><label class="sr-only" for="hp-fallback-potion">Add a health backup potion</label><select id="hp-fallback-potion"><option value="">Choose a backup…</option></select><button class="button secondary" id="hp-fallback-add" type="button">Add backup</button></div>
+          </details>
+          <div class="potion-status"><div><span class="caption">ACTIVE SELECTION</span><strong id="hp-active-name">—</strong></div><div class="ready-status"><span class="caption">NEXT READY</span><strong id="hp-ready">—</strong></div></div>
+        </section>
+        <section class="resource-card mana" aria-labelledby="mp-title">
+          <div class="card-heading"><div class="resource-title"><span class="resource-icon" aria-hidden="true">◇</span><div><p class="eyebrow">MP SUPPORT</p><h2 id="mp-title">Mana</h2></div></div><label class="switch"><input id="mp-enabled" type="checkbox" checked><span class="switch-track" aria-hidden="true"></span><span class="sr-only">Enable mana potions</span></label></div>
+          <div class="live-resource"><div><span class="caption">CURRENT MANA</span><strong id="mp-live-value">—</strong></div><span id="mp-live-detail">Waiting for game data</span></div>
+          <div class="resource-meter" id="mp-meter" role="progressbar" aria-label="Current mana" aria-valuemin="0" aria-valuemax="100"><div class="meter-fill" id="mp-fill"></div></div>
+          <div class="threshold-heading"><label for="mp-threshold">Use when below</label><div class="percent-input"><input id="mp-threshold" type="number" min="1" max="99" step="1" value="30" inputmode="numeric" aria-describedby="mp-error"><span>%</span></div></div>
+          <label class="sr-only" for="mp-slider">Mana threshold percentage</label><input class="threshold-slider" id="mp-slider" type="range" min="1" max="99" step="1" value="30">
+          <div class="range-scale" aria-hidden="true"><span>1%</span><span>99%</span></div><p class="field-error" id="mp-error" hidden></p>
+          <label class="field-label" for="mp-potion">Preferred mana potion</label><select id="mp-potion"><option value="0">Automatic · ordinary potions</option></select>
+          <p class="selection-note" id="mp-selection-note">Connect Toolbox to see verified potions and owned amounts.</p>
+          <details class="rotation-editor" id="mp-rotation-editor"><summary>Backup potions <span id="mp-backup-count">No backup</span></summary>
+            <p class="rotation-note" id="mp-rotation-note">No backup selected. Only the preferred potion will be used.</p>
+            <ol class="fallbacks" id="mp-fallbacks" aria-label="Mana backup priority"></ol>
+            <div class="fallback-picker"><label class="sr-only" for="mp-fallback-potion">Add a mana backup potion</label><select id="mp-fallback-potion"><option value="">Choose a backup…</option></select><button class="button secondary" id="mp-fallback-add" type="button">Add backup</button></div>
+          </details>
+          <div class="potion-status"><div><span class="caption">ACTIVE SELECTION</span><strong id="mp-active-name">—</strong></div><div class="ready-status"><span class="caption">NEXT READY</span><strong id="mp-ready">—</strong></div></div>
+        </section>
+      </div>
+      <section class="options-panel" aria-label="Automation preferences">
+        <label class="combat-option"><input type="checkbox" id="combat-only" checked><span><strong>Only in combat</strong><small>Pause automatic use while you are out of combat.</small></span></label>
+        <div class="combined-panel" id="combined-panel" hidden><div><label for="combined-policy">Combined HP + MP potions</label><p>One potion restores both resources and may share a cooldown.</p></div><select id="combined-policy"><option value="either">Use when either is low</option><option value="both">Use only when both are low</option></select></div>
+      </section>
+      <div class="activity-line"><span class="activity-dot" aria-hidden="true"></span><p id="last-action">No potion activity reported.</p></div>
+      <p class="footnote">Opening or saving this window never requests a potion. Saved settings apply to the next regular automation check. Requests do not prove the server used an item.</p>
+    </main>
+    <footer class="savebar"><div><strong id="change-count">All changes saved</strong><p id="save-hint">Preview · saving unavailable</p></div><div class="save-actions"><button class="button secondary" type="button" id="discard-button" disabled>Discard</button><button class="button primary" type="button" id="save-button" disabled>Save settings <span aria-hidden="true">↗</span></button></div></footer>
+  </div>
+</body>
+</html>

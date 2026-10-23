@@ -1,0 +1,4 @@
+settings.json
+settings.json.bak
+node_modules/
+*.tmp

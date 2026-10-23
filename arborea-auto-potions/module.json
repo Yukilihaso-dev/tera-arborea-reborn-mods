@@ -1,0 +1,9 @@
+{
+  "name": "arborea-auto-potions",
+  "author": "Codex",
+  "description": "HP and MP automatic potions with a local GUI and current Arborea item catalog",
+  "version": "1.1.1",
+  "disableAutoUpdate": false,
+  "servers": ["https://raw.githubusercontent.com/Yukilihaso-dev/tera-arborea-reborn-mods/main/arborea-auto-potions/"],
+  "options": {"cliName": "Auto Potions", "guiName": "Arborea Auto Potions", "settingsVersion": 1, "settingsFile": "settings.json", "settingsMigrator": "migration.js", "reloadable": true}
+}
